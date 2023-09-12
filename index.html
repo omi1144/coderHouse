@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<style>
+    #result {
+        font-size: 200px;
+        background: url("gif/fire-51.gif") center/cover;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .megaman {
+        height: 30px;
+        width: 30px;
+        background-image: url(https://www.sprites-inc.co.uk/files/Classic/Megaman/MM9/mm9_unused_megamanrun.png);
+        animation: megaman calc(3s/5) steps(5, end) infinite;
+    }
+
+    @keyframes megaman {
+        from {
+            background-position-x: 0;
+        }
+
+        to {
+            background-position-x: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="flex flex-col gap-5 items-center ">
+        <div class="body flex flex-col bg-white rounded-xl p-8">
+            <h1 class="text-3xl capitalize font-extrabold text-center text-[#1D232A]">calculadora super chingona </h1>
+            <div class="megaman items-center"></div>
+            <div class="calculatorShow text-center font-extrabold" id="result">0</div>
+            <div class="calculatorKey grid grid-cols-4 gap-4">
+                <input id="valor1" type="text" placeholder="Number" class="col-span-4 input input-bordered w-full" />
+                <input id="valor2" type="text" placeholder="Number" class="col-span-4 input input-bordered w-full" />
+                <button class="btn" data-action="multiply">x</button>
+                <button class="btn" data-action="subtract">-</button>
+                <button class="btn" data-action="add">+</button>
+                <button class="btn" data-action="divide">/</button>
+            </div>
+        </div>
+    </div>
+    <script src="logica.js"></script>
+</body>
+
+</html>
